@@ -1,2 +1,2 @@
 # tutorials
-Repository to store tutorials followed for different languages and frameworks
+Repository to store code written in tutorials that I followed to learn different languages and frameworks
