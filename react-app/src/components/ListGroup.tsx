@@ -6,7 +6,7 @@ interface Props {
   onSelectItem: (item: string) => void;
 }
 
-function ListGroup({ items, heading, onSelectItem }: Props) {
+const ListGroup = ({ items, heading, onSelectItem }: Props) => {
   // hook
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
@@ -35,6 +35,6 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
       </ul>
     </Fragment>
   );
-}
+};
 
 export default ListGroup;
