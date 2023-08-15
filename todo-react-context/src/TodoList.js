@@ -1,8 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import TodoContext from './TodoContext';
  
 const TodoList = () => {
-  const { tasks, deleteTask } = useContext(TodoContext);
+  const { tasks, loadTasks, deleteTask } = useContext(TodoContext);
+
+  useEffect(() => {
+    loadTasks([
+      {
+        id: 1,
+        taskName: 'foo'
+      },
+      {
+        id: 2,
+        taskName: 'bar',
+      },
+      {
+        id: 3,
+        taskName: 'etc'
+      }
+    ])
+  }, [])
+
   return (
     <ul>
       {tasks.map((task) => (

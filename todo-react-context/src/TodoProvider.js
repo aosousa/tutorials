@@ -3,6 +3,10 @@ import TodoContext from './TodoContext';
  
 const TodoProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
+
+  const loadTasks = (tasks) => {
+    setTasks(tasks)
+  }
  
   const addTask = (newTask) => {
     setTasks([...tasks, newTask]);
@@ -13,7 +17,7 @@ const TodoProvider = ({ children }) => {
   };
  
   return (
-    <TodoContext.Provider value={{ tasks, addTask, deleteTask }}>
+    <TodoContext.Provider value={{ tasks, loadTasks, addTask, deleteTask }}>
       {children}
     </TodoContext.Provider>
   );
