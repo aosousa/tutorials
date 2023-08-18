@@ -1,5 +1,5 @@
 import Fastify, { FastifyReply, FastifyRequest } from "fastify";
-import fjwt from 'fastify-jwt'
+import fastifyJwt from "@fastify/jwt";
 // import swagger from 'fastify-swagger'
 // import { withRefResolver } from "fastify-zod";
 // import { version } from '../package.json'
@@ -17,11 +17,10 @@ export const server = Fastify()
 declare module "fastify" {
     export interface FastifyInstance {
         authenticate: any;
-        jwt: any;
     }
 }
 
-server.register(fjwt, {
+server.register(fastifyJwt, {
     secret: '12849ubca890snda8nsfasdfg'
 })
 

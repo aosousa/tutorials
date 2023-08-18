@@ -2,6 +2,7 @@ import { z } from 'zod'
 import { buildJsonSchemas } from 'fastify-zod'
 
 const productInput = {
+    user: z.number(),
     title: z.string(),
     price: z.number(),
     content: z.string().optional()
